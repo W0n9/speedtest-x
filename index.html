@@ -15,7 +15,7 @@ var url_report='./backend/report.php';
 var milestone=0;
 var key_prefix=Date.parse(new Date());
 s.onupdate=function(data){ //callback to update data in UI
-    I("ip").textContent=data.clientIp;
+    I("ip").textContent = data.clientIp || "获取失败";
     I("dlText").textContent=(data.testState==1&&data.dlStatus==0)?"...":data.dlStatus;
     I("ulText").textContent=(data.testState==3&&data.ulStatus==0)?"...":data.ulStatus;
     I("pingText").textContent=data.pingStatus;
